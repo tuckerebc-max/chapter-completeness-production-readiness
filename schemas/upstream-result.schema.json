@@ -1,0 +1,20 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/cpr/upstream-result.schema.json",
+  "title":"CPR Upstream Skill Result",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["skill_id","run_id","status","finding_ids","owner","release_effect","response_status"],
+  "properties":{
+    "skill_id":{"type":"string","enum":["RCI","SGI","TE","CE","SEI","EQA"]},
+    "run_id":{"type":"string"},
+    "status":{"type":"string","enum":["pass","not_run","query","hold","block","referred","unknown"]},
+    "not_run_reason":{"type":["string","null"]},
+    "finding_ids":{"type":"array","items":{"type":"string"}},
+    "owner":{"type":"string"},
+    "severity":{"type":["string","null"],"enum":["low","medium","high","critical",null]},
+    "release_effect":{"type":"string","enum":["none","track","hold","block"]},
+    "response_status":{"type":"string","enum":["not_required","open","received","accepted","disputed","unknown"]},
+    "evidence_locator":{"type":["string","null"]}
+  }
+}

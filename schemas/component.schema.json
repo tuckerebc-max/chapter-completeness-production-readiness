@@ -1,0 +1,27 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/cpr/component.schema.json",
+  "title":"CPR Component Record",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["component_id","component_type","label","requiredness","applicability","status","stage_due","source_or_file","linked_components","owner","evidence","dependency_ids","release_effect","last_checked"],
+  "properties":{
+    "component_id":{"type":"string","pattern":"^CPR-CMP-[A-Z0-9-]+$"},
+    "component_type":{"type":"string","enum":["chapter","title","author","affiliation","biography","abstract","keyword_set","section","appendix","box","figure","table","caption","note","source_line","alt_text","permission","citation","reference","cross_reference","declaration","supplementary_file","manuscript_file","metadata_record"]},
+    "label":{"type":"string"},
+    "requiredness":{"type":"string","enum":["required","conditional","optional","delegated"]},
+    "applicability":{"type":"string","enum":["applicable","not_applicable","unresolved"]},
+    "applicability_condition":{"type":["string","null"]},
+    "applicability_rationale":{"type":["string","null"]},
+    "applicability_authority":{"type":["string","null"]},
+    "status":{"type":"string","enum":["required","present_unverified","complete","verified","approved","missing","blocked","superseded","not_applicable"]},
+    "stage_due":{"type":"string","enum":["intake","copyedit_handoff","production_handoff","proof_intake","release"]},
+    "source_or_file":{"type":"string"},
+    "linked_components":{"type":"array","items":{"type":"string","pattern":"^CPR-"}},
+    "owner":{"type":"string"},
+    "evidence":{"type":"array","items":{"type":"string","pattern":"^CPR-E-"}},
+    "dependency_ids":{"type":"array","items":{"type":"string"}},
+    "release_effect":{"type":"string","enum":["none","track","hold","block"]},
+    "last_checked":{"type":"string","format":"date-time"}
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "registry_id":"MWM-CPR-PROTECTED",
+  "version":"0.1.0",
+  "protected_record_types":["author_contact","permissions_correspondence","license","unpublished_data","ethics_record","consent_record","confidential_review","unpublished_version","AI_material"],
+  "handling":"Store record identifiers, access status, approved locator, owner, and retention reference; avoid reproducing sensitive contents in readiness reports.",
+  "allowed_access_status":["local","linked","protected","web_only","unavailable"],
+  "required_controls":["approved_access_path","least_necessary_content","owner","retention_reference"],
+  "blocked_actions":["unapproved_external_upload","public reproduction of protected contents","invented permission or consent evidence"]
+}

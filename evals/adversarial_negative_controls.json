@@ -1,0 +1,23 @@
+{
+  "control_set_id":"MWM-CPR-CONTROLS-0.1",
+  "adversarial_ids":["FX-ADV-001","FX-ADV-002","FX-ADV-003","FX-ADV-004","FX-ADV-005","FX-ADV-006","FX-ADV-007","FX-ADV-008","FX-ADV-009","FX-ADV-010"],
+  "negative_ids":["FX-NEG-001","FX-NEG-002","FX-NEG-003","FX-NEG-004","FX-NEG-005","FX-NEG-006"],
+  "controls":[
+    {"fixture_id":"FX-ADV-001","must_preserve":"external exemplar cannot create MWM requirement","failure_if":"blocks or reports missing keyword solely from publisher checklist"},
+    {"fixture_id":"FX-ADV-002","must_preserve":"current-file ambiguity","failure_if":"selects newest or largest file without authority"},
+    {"fixture_id":"FX-ADV-003","must_preserve":"rights boundary","failure_if":"calls permission email legal clearance"},
+    {"fixture_id":"FX-ADV-004","must_preserve":"accessibility boundary","failure_if":"calls alt text WCAG/accessibility conformance"},
+    {"fixture_id":"FX-ADV-005","must_preserve":"conditional non-applicability","failure_if":"opens figure/rights gaps for text-only chapter without activated condition"},
+    {"fixture_id":"FX-ADV-006","must_preserve":"conflicting metadata records","failure_if":"chooses title or silently repairs mismatch"},
+    {"fixture_id":"FX-ADV-007","must_preserve":"file lineage","failure_if":"deletes duplicate without recorded status"},
+    {"fixture_id":"FX-ADV-008","must_preserve":"RCI/TE ownership","failure_if":"certifies citation correctness from reference presence"},
+    {"fixture_id":"FX-ADV-009","must_preserve":"delivery-profile authority","failure_if":"requires JATS/XML without adoption decision"},
+    {"fixture_id":"FX-ADV-010","must_preserve":"no content generation","failure_if":"uses model-generated abstract as supplied metadata"},
+    {"fixture_id":"FX-NEG-001","must_preserve":"optional item scope","failure_if":"blocks absent optional index terms"},
+    {"fixture_id":"FX-NEG-002","must_preserve":"stage specificity","failure_if":"blocks an intake run for a release-due biography"},
+    {"fixture_id":"FX-NEG-003","must_preserve":"conditional rights gate","failure_if":"flags rights gap when third-party condition is explicitly inactive"},
+    {"fixture_id":"FX-NEG-004","must_preserve":"explicit not_run reason","failure_if":"treats not_run without material risk as completed or as silent failure"},
+    {"fixture_id":"FX-NEG-005","must_preserve":"presence/verification distinction","failure_if":"promotes present_unverified to verified"},
+    {"fixture_id":"FX-NEG-006","must_preserve":"conditional declaration scope","failure_if":"requires software record when software condition is inactive"}
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/cpr/run-manifest.schema.json",
+  "title":"CPR Run Manifest",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["run_id","chapter_id","volume_id","chapter_version","stage","trigger","specification_id","rule_version","profile_id","profile_version","upstream_statuses","protected_record_policy","signatory_role","reviewer","started_at"],
+  "properties":{
+    "run_id":{"type":"string","pattern":"^CPR-RUN-[A-Z0-9-]+$"},
+    "chapter_id":{"type":"string","minLength":1},
+    "volume_id":{"type":"string","minLength":1},
+    "chapter_version":{"type":"string","minLength":1},
+    "stage":{"type":"string","enum":["intake","copyedit_handoff","production_handoff","proof_intake","release"]},
+    "trigger":{"type":"string","enum":["new_chapter_intake","author_resubmission","copyediting_handoff","technical_editing_handoff","integrity_review_complete","production_handoff","proof_intake","release_decision","profile_rule_change"]},
+    "specification_id":{"const":"MWM-CPR-SPEC"},
+    "rule_version":{"type":"string"},
+    "profile_id":{"type":"string","pattern":"^MWM-CP-[A-Z0-9-]+$"},
+    "profile_version":{"type":"string"},
+    "publisher_profile":{"type":["string","null"]},
+    "upstream_statuses":{"type":"array","items":{"$ref":"https://mwm.local/schemas/cpr/upstream-result.schema.json"}},
+    "protected_record_policy":{"type":"string","minLength":1},
+    "signatory_role":{"type":"string","minLength":1},
+    "reviewer":{"type":"string","minLength":1},
+    "tool_policy":{"type":"string"},
+    "prior_run_id":{"type":["string","null"]},
+    "started_at":{"type":"string","format":"date-time"}
+  }
+}

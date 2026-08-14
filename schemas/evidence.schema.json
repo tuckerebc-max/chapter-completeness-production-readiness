@@ -1,0 +1,21 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/cpr/evidence.schema.json",
+  "title":"CPR Evidence Record",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["evidence_id","component_id","evidence_type","locator","access_status","observed_fact","authority","captured_at","reviewer","quality_level"],
+  "properties":{
+    "evidence_id":{"type":"string","pattern":"^CPR-E-[A-Z0-9-]+$"},
+    "component_id":{"type":"string","pattern":"^CPR-CMP-"},
+    "evidence_type":{"type":"string","enum":["file","metadata","owner_confirmation","downstream_result","approval","access_test","decision_record","comparison"]},
+    "locator":{"type":"string"},
+    "access_status":{"type":"string","enum":["local","linked","protected","web_only","unavailable"]},
+    "observed_fact":{"type":"string"},
+    "authority":{"type":"string"},
+    "captured_at":{"type":"string","format":"date-time"},
+    "reviewer":{"type":"string"},
+    "quality_level":{"type":"string","enum":["Q0","Q1","Q2","Q3","Q4"]},
+    "retention_reference":{"type":["string","null"]}
+  }
+}

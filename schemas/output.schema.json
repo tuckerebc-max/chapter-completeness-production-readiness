@@ -1,0 +1,25 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/cpr/output.schema.json",
+  "title":"CPR Run Result",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["specification_id","run_id","chapter_id","volume_id","version_id","stage","profile_id","summary","components","files","findings","upstream_statuses","ledger","decision"],
+  "properties":{
+    "specification_id":{"const":"MWM-CPR-SPEC"},
+    "run_id":{"type":"string"},
+    "chapter_id":{"type":"string"},
+    "volume_id":{"type":"string"},
+    "version_id":{"type":"string"},
+    "stage":{"type":"string"},
+    "profile_id":{"type":"string"},
+    "summary":{"type":"object","additionalProperties":false,"required":["component_count","file_count","missing_count","blocked_count","tracked_count","not_applicable_count","upstream_blocker_count","release_recommendation"],"properties":{"component_count":{"type":"integer","minimum":0},"file_count":{"type":"integer","minimum":0},"missing_count":{"type":"integer","minimum":0},"blocked_count":{"type":"integer","minimum":0},"tracked_count":{"type":"integer","minimum":0},"not_applicable_count":{"type":"integer","minimum":0},"upstream_blocker_count":{"type":"integer","minimum":0},"release_recommendation":{"type":"string","enum":["ready","ready_with_tracked_items","conditional_hold","hold","blocked","not_ready"]}}},
+    "components":{"type":"array","items":{"$ref":"https://mwm.local/schemas/cpr/component.schema.json"}},
+    "files":{"type":"array","items":{"$ref":"https://mwm.local/schemas/cpr/file-record.schema.json"}},
+    "findings":{"type":"array","items":{"$ref":"https://mwm.local/schemas/cpr/finding.schema.json"}},
+    "upstream_statuses":{"type":"array","items":{"$ref":"https://mwm.local/schemas/cpr/upstream-result.schema.json"}},
+    "ledger":{"$ref":"https://mwm.local/schemas/cpr/ledger.schema.json"},
+    "decision":{"$ref":"https://mwm.local/schemas/cpr/decision.schema.json"},
+    "generated_at":{"type":"string","format":"date-time"}
+  }
+}

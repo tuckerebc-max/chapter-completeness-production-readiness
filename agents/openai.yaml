@@ -1,0 +1,7 @@
+interface:
+  display_name: "Chapter Completeness & Production Readiness"
+  short_description: "Evidence-based chapter readiness gates"
+  default_prompt: "Use $chapter-completeness-production-readiness to inventory chapter components, reconcile package evidence, and produce a human-signable readiness decision."
+
+policy:
+  allow_implicit_invocation: true

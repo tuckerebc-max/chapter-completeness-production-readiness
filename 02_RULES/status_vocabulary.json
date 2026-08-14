@@ -1,0 +1,21 @@
+{
+  "registry_id":"MWM-CPR-STATUS",
+  "version":"0.1.0",
+  "component_statuses":["required","conditional","optional","not_applicable","present_unverified","complete","verified","approved","missing","blocked","superseded"],
+  "applicability":["applicable","not_applicable","unresolved"],
+  "interventions":["AUTO_RECORD","TRACK","QUERY","ROUTE","HOLD","BLOCK","PASS"],
+  "release_decisions":["ready","ready_with_tracked_items","conditional_hold","hold","blocked","not_ready"],
+  "evidence_levels":{
+    "Q0":"Model expectation; cannot establish a requirement.",
+    "Q1":"Object or file exists; supports present_unverified.",
+    "Q2":"Required fields and companion links are present; supports complete for the stage.",
+    "Q3":"Downstream verification or owner approval is recorded.",
+    "Q4":"Human-signed stage release with material dependencies resolved."
+  },
+  "promotion_rules":[
+    "present_unverified cannot become verified or approved without downstream evidence.",
+    "not_applicable requires a profile condition, rationale, and authority.",
+    "ready requires applicable current gates and no unresolved material blocker.",
+    "human signatory is required for handoff or release."
+  ]
+}

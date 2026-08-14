@@ -1,0 +1,25 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/cpr/ledger.schema.json",
+  "title":"CPR Readiness Ledger",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["ledger_id","run_id","chapter_id","version_id","stage","open_finding_ids","tracked_finding_ids","resolved_finding_ids","blocked_count","upstream_blocker_count","not_applicable_count","release_recommendation","owner_groups","created_at"],
+  "properties":{
+    "ledger_id":{"type":"string","pattern":"^CPR-LEDGER-"},
+    "run_id":{"type":"string","pattern":"^CPR-RUN-"},
+    "chapter_id":{"type":"string"},
+    "version_id":{"type":"string"},
+    "stage":{"type":"string"},
+    "open_finding_ids":{"type":"array","items":{"type":"string","pattern":"^CPR-FND-|^UP-"}},
+    "tracked_finding_ids":{"type":"array","items":{"type":"string"}},
+    "resolved_finding_ids":{"type":"array","items":{"type":"string"}},
+    "blocked_count":{"type":"integer","minimum":0},
+    "upstream_blocker_count":{"type":"integer","minimum":0},
+    "not_applicable_count":{"type":"integer","minimum":0},
+    "release_recommendation":{"type":"string","enum":["ready","ready_with_tracked_items","conditional_hold","hold","blocked","not_ready"]},
+    "owner_groups":{"type":"array","items":{"type":"string"}},
+    "created_at":{"type":"string","format":"date-time"},
+    "supersedes":{"type":["string","null"]}
+  }
+}

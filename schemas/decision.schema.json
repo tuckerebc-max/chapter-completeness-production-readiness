@@ -1,0 +1,26 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/cpr/decision.schema.json",
+  "title":"CPR Human Decision Record",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["decision_id","run_id","chapter_id","version_id","stage","recommendation","finding_ids","evidence_summary","rationale","signatory_role","status","created_at"],
+  "properties":{
+    "decision_id":{"type":"string","pattern":"^CPR-DEC-"},
+    "run_id":{"type":"string"},
+    "chapter_id":{"type":"string"},
+    "version_id":{"type":"string"},
+    "stage":{"type":"string","enum":["intake","copyedit_handoff","production_handoff","proof_intake","release"]},
+    "recommendation":{"type":"string","enum":["ready","ready_with_tracked_items","conditional_hold","hold","blocked","not_ready"]},
+    "finding_ids":{"type":"array","items":{"type":"string"}},
+    "evidence_summary":{"type":"string"},
+    "rationale":{"type":"string"},
+    "conditions":{"type":"array","items":{"type":"string"}},
+    "signatory_role":{"type":"string"},
+    "signatory":{"type":["string","null"]},
+    "signed_at":{"type":["string","null"],"format":"date-time"},
+    "status":{"type":"string","enum":["recommendation_only","pending_signoff","signed","superseded"]},
+    "supersedes":{"type":["string","null"]},
+    "created_at":{"type":"string","format":"date-time"}
+  }
+}

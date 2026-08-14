@@ -1,0 +1,9 @@
+{
+  "integration_set_id":"MWM-CPR-INTEGRATION-0.1",
+  "cases":[
+    {"case_id":"FX-INT-001","sequence":["load approved profile","inventory current package","reconcile components","import RCI/SGI/TE/CE/SEI passes","apply release gate","record human signatory"],"assertions":["all applicable current gates complete","no material upstream blocker","recommendation ready","model does not sign release"]},
+    {"case_id":"FX-INT-002","sequence":["inventory ambiguous files","import critical SEI block","apply dependency precedence","produce release report"],"assertions":["current-file ambiguity remains blocked","upstream critical blocker remains preserved","recommendation blocked","both owners are routed"]},
+    {"case_id":"FX-INT-003","sequence":["load prior inventory","compare resubmission","mark prior file superseded","apply recorded title decision","rerun affected gates"],"assertions":["superseded record retained","current file is identified","prior mismatch is not silently erased","recommendation may be ready_with_tracked_items"]},
+    {"case_id":"FX-INT-004","sequence":["load new profile version","recompute conditional applicability","activate AI/rights/abstract gates","record missing evidence","route open decisions"],"assertions":["newly activated requirements are explicit","no values are invented","open decisions remain hooks","recommendation hold until current required evidence is resolved"]}
+  ]
+}

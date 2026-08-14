@@ -1,0 +1,25 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/cpr/profile.schema.json",
+  "title":"MWM CPR Component Profile",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["profile_id","profile_version","volume_id","chapter_type","stage","publisher_profile","required_components","conditional_rules","optional_components","delegated_owners","accessibility_target","release_signatory_role","effective_date","approved_by"],
+  "properties":{
+    "profile_id":{"type":"string","pattern":"^MWM-CP-[A-Z0-9-]+$"},
+    "profile_version":{"type":"string"},
+    "volume_id":{"type":"string"},
+    "chapter_type":{"type":"string","enum":["research_chapter","conceptual_chapter","case","review","other"]},
+    "stage":{"type":"string","enum":["intake","copyedit_handoff","production_handoff","proof_intake","release"]},
+    "publisher_profile":{"type":["string","null"]},
+    "required_components":{"type":"array","items":{"$ref":"https://mwm.local/schemas/cpr/component.schema.json"}},
+    "conditional_rules":{"type":"array","items":{"type":"object","additionalProperties":false,"required":["rule_id","condition","authority_id","owner","stage_due","release_effect"],"properties":{"rule_id":{"type":"string"},"condition":{"type":"string"},"authority_id":{"type":"string"},"owner":{"type":"string"},"stage_due":{"type":"string"},"release_effect":{"enum":["none","track","hold","block"]}}}},
+    "optional_components":{"type":"array","items":{"$ref":"https://mwm.local/schemas/cpr/component.schema.json"}},
+    "delegated_owners":{"type":"array","items":{"type":"object","additionalProperties":false,"required":["owner_id","owner","authority","scope"],"properties":{"owner_id":{"type":"string"},"owner":{"type":"string"},"authority":{"type":"string"},"scope":{"type":"string"}}}},
+    "accessibility_target":{"type":["string","null"]},
+    "release_signatory_role":{"type":"string"},
+    "effective_date":{"type":"string","format":"date"},
+    "approved_by":{"type":"string"},
+    "decision_log_id":{"type":["string","null"]}
+  }
+}
