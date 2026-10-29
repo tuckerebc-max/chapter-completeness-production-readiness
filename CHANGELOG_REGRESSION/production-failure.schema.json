@@ -1,0 +1,29 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/cpr/production-failure.schema.json",
+  "title":"CPR Production Failure Capture",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["failure_id","detected_at","detected_by","chapter_id","version_id","stage","failure_class","severity","observed_fact","impact","containment","owner","related_finding_ids","related_fixture_ids","root_cause_status","corrective_action","retest_plan","status"],
+  "properties":{
+    "failure_id":{"type":"string","pattern":"^CPR-FAIL-"},
+    "detected_at":{"type":"string","format":"date-time"},
+    "detected_by":{"type":"string"},
+    "chapter_id":{"type":"string"},
+    "version_id":{"type":"string"},
+    "stage":{"type":"string"},
+    "failure_class":{"type":"string","enum":["false_ready","false_block","profile_authority","conditionality","file_version","silent_repair","status_conflation","cross_file_reconciliation","upstream_dependency","rights_boundary","accessibility_boundary","metadata_invention","signoff_boundary","other"]},
+    "severity":{"type":"string","enum":["low","medium","high","critical"]},
+    "observed_fact":{"type":"string"},
+    "impact":{"type":"string"},
+    "containment":{"type":"string"},
+    "owner":{"type":"string"},
+    "related_finding_ids":{"type":"array","items":{"type":"string"}},
+    "related_fixture_ids":{"type":"array","items":{"type":"string"}},
+    "root_cause_status":{"type":"string","enum":["unknown","hypothesis","confirmed"]},
+    "corrective_action":{"type":"string"},
+    "retest_plan":{"type":"string"},
+    "status":{"type":"string","enum":["open","contained","correcting","retesting","closed"]},
+    "closed_at":{"type":["string","null"],"format":"date-time"}
+  }
+}
