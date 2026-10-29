@@ -1,0 +1,42 @@
+{
+  "baseline_commit": "362506cbf98c365920398d25638805b14e434497",
+  "mapping": [
+    {
+      "source_path": "CHANGELOG.md",
+      "restored_path": "CHANGELOG_REGRESSION/CHANGELOG.md",
+      "sha256": "179f3c316c403a238927c0af23b7868cd44553542513f625d6ba9fb37dc53bce",
+      "basis": "Current pinned upstream bytes; original source retained"
+    },
+    {
+      "source_path": "regression-intake.schema.json",
+      "restored_path": "CHANGELOG_REGRESSION/regression-intake.schema.json",
+      "sha256": "71d93e5a31dad6ebccbc0f5b373f89f83ae896df6ad00ae07baca36e9ed04e2f",
+      "basis": "Current pinned upstream bytes; original source retained"
+    },
+    {
+      "source_path": "REGRES~2.JSO",
+      "restored_path": "CHANGELOG_REGRESSION/regression-intake.template.json",
+      "sha256": "c0e8386e071c0d35885d0328f78b57793d950d49a648faa0bffef301cb96e15c",
+      "basis": "Current pinned upstream bytes; original source retained"
+    },
+    {
+      "source_path": "PRODUC~1.JSO",
+      "restored_path": "CHANGELOG_REGRESSION/production-failure.schema.json",
+      "sha256": "516e0a1bb2a1e84315bc5c74f6876be7d8742608171a66e4e4a9ba62e898e32f",
+      "basis": "Current pinned upstream bytes; original source retained"
+    },
+    {
+      "source_path": "PRODUC~2.JSO",
+      "restored_path": "CHANGELOG_REGRESSION/production-failure.template.json",
+      "sha256": "8a6b78035c0f08fd80dee61bf3a88bb3c436264ca88eab76642743b4794307eb",
+      "basis": "Current pinned upstream bytes; original source retained"
+    },
+    {
+      "source_path": "regression_policy.json",
+      "restored_path": "CHANGELOG_REGRESSION/regression_policy.json",
+      "sha256": "63057a8e575b41b7464d6a6bd943b394150c10fb017ca0b5d3383e038e747aa8",
+      "basis": "Current pinned upstream bytes; original source retained"
+    }
+  ],
+  "contents_invented": false
+}

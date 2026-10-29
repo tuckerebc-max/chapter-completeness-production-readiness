@@ -1,0 +1,28 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/cpr/regression-intake.schema.json",
+  "title":"CPR Regression Intake",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["regression_id","reported_at","reported_by","source","summary","trigger","affected_rule_ids","affected_profile_ids","expected_behavior","observed_behavior","fixture_ids","severity","status","owner","retest_required"],
+  "properties":{
+    "regression_id":{"type":"string","pattern":"^CPR-REG-"},
+    "reported_at":{"type":"string","format":"date-time"},
+    "reported_by":{"type":"string"},
+    "source":{"type":"string","enum":["evaluation","production","human_qa","upstream_skill","profile_change","specification_change"]},
+    "summary":{"type":"string"},
+    "trigger":{"type":"string"},
+    "affected_rule_ids":{"type":"array","items":{"type":"string","pattern":"^CPR-"}},
+    "affected_profile_ids":{"type":"array","items":{"type":"string"}},
+    "expected_behavior":{"type":"string"},
+    "observed_behavior":{"type":"string"},
+    "fixture_ids":{"type":"array","items":{"type":"string"}},
+    "severity":{"type":"string","enum":["low","medium","high","critical"]},
+    "status":{"type":"string","enum":["new","triaged","accepted","rejected","fixed","verified","closed"]},
+    "owner":{"type":"string"},
+    "decision_hook_ids":{"type":"array","items":{"type":"string","pattern":"^CPR-DH-"}},
+    "retest_required":{"type":"boolean"},
+    "retest_result":{"type":["string","null"]},
+    "closed_at":{"type":["string","null"],"format":"date-time"}
+  }
+}

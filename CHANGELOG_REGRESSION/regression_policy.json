@@ -1,0 +1,9 @@
+{
+  "policy_id":"MWM-CPR-REGRESSION-POLICY",
+  "version":"0.1.0",
+  "intake_sources":["evaluation","production","human_qa","upstream_skill","profile_change","specification_change"],
+  "zero_tolerance_classes":["false_ready","silent_repair","status_conflation","file_version","metadata_invention","signoff_boundary","rights_boundary","accessibility_boundary","upstream_dependency"],
+  "required_actions":["contain affected package or release decision","preserve evidence and version lineage","link rule/profile/specification IDs","add or mutate a fixture","rerun full suite","record owner approval","document migration or rollback"],
+  "closure_requirements":["corrective action recorded","targeted fixture passes","full package validator passes","full scorer passes","human QA when behavior is material","owner approval recorded"],
+  "production_failure_routing":{"false_ready":"Editorial QA/orchestration plus affected family owner","file_version":"Production coordinator","rights_boundary":"Rights/permissions owner","accessibility_boundary":"Accessibility owner","upstream_dependency":"Owning family and Editorial QA/orchestration","metadata_invention":"CPR owner and editorial owner"}
+}

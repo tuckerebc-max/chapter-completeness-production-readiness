@@ -1,0 +1,23 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://mwm.local/schemas/cpr/file-record.schema.json",
+  "title":"CPR File Record",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["file_id","path_or_uri","filename","extension","version_id","declared_purpose","status","clean_state","hash_or_stable_id","supersedes","evidence_id","owner"],
+  "properties":{
+    "file_id":{"type":"string","pattern":"^CPR-F-"},
+    "path_or_uri":{"type":"string"},
+    "filename":{"type":"string"},
+    "extension":{"type":"string"},
+    "version_id":{"type":"string"},
+    "declared_purpose":{"type":"string"},
+    "status":{"type":"string","enum":["current","superseded","duplicate","unknown","missing"]},
+    "clean_state":{"type":"string","enum":["clean","tracked_changes","comments","not_applicable","unknown"]},
+    "hash_or_stable_id":{"type":"string"},
+    "supersedes":{"type":["string","null"]},
+    "evidence_id":{"type":"string","pattern":"^CPR-E-"},
+    "owner":{"type":"string"},
+    "last_modified":{"type":["string","null"],"format":"date-time"}
+  }
+}

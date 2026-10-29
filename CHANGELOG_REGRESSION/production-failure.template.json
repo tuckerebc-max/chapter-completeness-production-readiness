@@ -1,0 +1,21 @@
+{
+  "failure_id":"CPR-FAIL-0001",
+  "detected_at":"2026-08-13T00:00:00Z",
+  "detected_by":"owner",
+  "chapter_id":"",
+  "version_id":"",
+  "stage":"",
+  "failure_class":"other",
+  "severity":"medium",
+  "observed_fact":"",
+  "impact":"",
+  "containment":"",
+  "owner":"",
+  "related_finding_ids":[],
+  "related_fixture_ids":[],
+  "root_cause_status":"unknown",
+  "corrective_action":"",
+  "retest_plan":"",
+  "status":"open",
+  "closed_at":null
+}

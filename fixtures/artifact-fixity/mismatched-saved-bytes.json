@@ -1,0 +1,33 @@
+{
+  "contract_version": "cpr-artifact-fixity/1",
+  "target": {
+    "artifact_id": "synthetic-packet",
+    "version_id": "v2",
+    "sha256": "3d93681d3eed19d197d70fd46782ffe8b8897bb3d2faa0ba698c7398efeeede8",
+    "authority_ref": "synthetic-owner-record"
+  },
+  "candidate": {
+    "path": "candidate.txt"
+  },
+  "saved": {
+    "artifact_id": "synthetic-packet",
+    "version_id": "v2",
+    "sha256": "3d93681d3eed19d197d70fd46782ffe8b8897bb3d2faa0ba698c7398efeeede8",
+    "path": "changed.txt",
+    "receipt_ref": "synthetic-saved-v2"
+  },
+  "review": {
+    "artifact_id": "synthetic-packet",
+    "version_id": "v2",
+    "sha256": "3d93681d3eed19d197d70fd46782ffe8b8897bb3d2faa0ba698c7398efeeede8",
+    "review_ref": "synthetic-review-v2"
+  },
+  "historical_receipts": [
+    {
+      "artifact_id": "synthetic-packet",
+      "version_id": "v1",
+      "sha256": "c3c9c294de6685786ff61179320901faa2cb5bc8eb309db5ac18204a0bb10f15",
+      "receipt_ref": "synthetic-old-receipt-v1"
+    }
+  ]
+}
